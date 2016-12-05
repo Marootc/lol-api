@@ -1,0 +1,27 @@
+<?php
+$id='17';
+$qquin='U10757013813646059540';
+$a='http://api.tgp.apilol.com/Userinfo?id='.$id.'&qquin='.$qquin;
+$b=file_get_contents($a);
+$c=json_decode($b);
+
+echo "游戏名:".$c->data->name;
+echo '<br>';
+echo '<br>';
+echo "头像:<img width='40'; src='http://cdn.tgp.qq.com/pallas/images/usericon/".$c->data->icon.".png'>";
+echo '<br>';
+echo '<br>';
+echo "大区:".$c->data->area_id;
+echo '<br>';
+echo '<br>';
+echo "等级:".$c->data->level;
+echo '<br>';
+echo '<br>';
+echo "胜点:".$c->data->win_point;
+echo '<br>';
+echo '<br>';
+echo "熟练度:".$c->data->power_value;
+echo '<br>';
+echo '<br>';
+echo "全区排名:".$c->data->rank_last_battle;
+?>
